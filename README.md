@@ -1,6 +1,6 @@
 # DevPrep AI
 
-🔗 **Live Demo:https://devprepai-alpha.vercel.app/
+🔗 **Live Demo:https://devprepai-69pyz8ers-ishita56s-projects.vercel.app/
 
 📂 **GitHub Repository:** https://github.com/ishita56/Devprep-AI
 

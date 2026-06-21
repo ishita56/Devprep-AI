@@ -16,15 +16,26 @@ const Register = ({ onSwitch }) => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await axios.post('https://devprep-ai-kc7r.onrender.com/api/auth/register', {
         name,
         email,
         password
       });
       login(response.data.user, response.data.token);
     } catch (err) {
-      setError(err.response?.data?.error || 'Something went wrong');
-    } finally {
+  alert(
+    `MESSAGE: ${err.message}
+STATUS: ${err.response?.status}
+DATA: ${JSON.stringify(err.response?.data)}`
+  );
+
+  setError(
+    err.response?.data?.error ||
+    err.message ||
+    "Something went wrong"
+  );
+
+} finally {
       setLoading(false);
     }
   };

@@ -10,6 +10,9 @@ const historyRoute = require('./routes/history');
 const authRoute = require('./routes/auth');
 
 const app = express();
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
 
 app.use(cors());
 app.use(express.json());

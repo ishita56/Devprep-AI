@@ -7,7 +7,7 @@ const History = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/history', {
+      const response = await axios.get('https://devprep-ai-kc7r.onrender.com/api/history', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setHistory(response.data);
@@ -20,7 +20,7 @@ const History = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/history/${id}`, {
+      await axios.delete(`https://devprep-ai-kc7r.onrender.com/api/history/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setHistory(history.filter(item => item._id !== id));

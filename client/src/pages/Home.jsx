@@ -15,7 +15,7 @@ const Home = () => {
     setResult(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/analyze', {
+      const response = await axios.post('https://devprep-ai-kc7r.onrender.com/api/analyze', {
         repoUrl: url
       },{
         headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}

@@ -113,9 +113,12 @@ router.post('/',  authMiddleware, async (req, res) => {
     });
 
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Something went wrong' });
-  }
-});
+  console.error("ANALYZE ERROR:", error);
+
+  res.status(500).json({
+    message: error.message,
+    details: error.response?.data || null
+  });
+}});
 
 module.exports = router;

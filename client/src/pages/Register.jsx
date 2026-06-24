@@ -19,7 +19,7 @@ const Register = ({ onSwitch }) => {
       console.log("Submitting:", { name, email, password });
 
       const response = await axios.post(
-        'https://devprep-ai-kc7r.onrender.com/api/auth/register',
+  `${process.env.REACT_APP_API_URL}/api/auth/register`,
         {
           name,
           email,
